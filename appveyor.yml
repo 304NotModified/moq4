@@ -7,7 +7,7 @@ environment:
   MSBUILD_LOGGER: C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll
 
 build_script:
-  - msbuild Moq.sln /r /t:Build;Test;Pack /logger:"%MSBUILD_LOGGER%"
+  - msbuild Moq.sln /r /t:Build;Test;Pack /p:ContinuousIntegrationBuild=true /p:EmbedUntrackedSources=true /logger:"%MSBUILD_LOGGER%"
 
 test: off
 
